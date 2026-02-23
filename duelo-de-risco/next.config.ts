@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Configuração para Vercel
+  trailingSlash: false,
+  
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -13,6 +17,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  
   // Permite conexões de qualquer IP na rede local
   async headers() {
     return [
