@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Configuração para Vercel
+  // Configuração de output para Vercel
+  output: 'standalone',
+  
+  // Desabilitar trailing slash
   trailingSlash: false,
   
   images: {
@@ -18,7 +21,7 @@ const nextConfig: NextConfig = {
     ],
   },
   
-  // Permite conexões de qualquer IP na rede local
+  // Headers CORS
   async headers() {
     return [
       {
